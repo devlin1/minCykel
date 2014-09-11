@@ -17,6 +17,7 @@ public class MainActivity extends Activity implements OnClickListener{
 		setContentView(R.layout.activity_main);
 		SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
 		boolean sharedUppe = settings.getBoolean("upFlag", false);
+		isUppe = sharedUppe;
 	    setUppe(sharedUppe); 
 		ImageView iv = (ImageView) findViewById(R.id.where);
 		iv.setOnClickListener(this);
@@ -31,7 +32,6 @@ public class MainActivity extends Activity implements OnClickListener{
 	@Override
 	public void onClick(View v){
 		ImageView iv = (ImageView) findViewById(R.id.where);
-		
 		isUppe=!isUppe;
 		iv.setImageResource(isUppe ? R.drawable.uppe_stor : R.drawable.nere_stor);
 	}
